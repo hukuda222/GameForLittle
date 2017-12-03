@@ -26,8 +26,8 @@ const gameInit = (stage, any) => {
     count.x = 300;
     count.y = 200;
     createjs.Tween.get(count).to({
-        scaleX: 4,
-        scaleY: 4
+        scaleX: 3,
+        scaleY: 3
     }, 1000, createjs.Ease.cubicInOut).to({
         scaleX: 1,
         scaleY: 1
@@ -42,12 +42,9 @@ const gameInit = (stage, any) => {
     }, 10, createjs.Ease.cubicInOut).call(_ => {
         count.text = "1";
     }).to({
-        scaleX: 4,
-        scaleY: 4
-    }, 1000, createjs.Ease.cubicInOut).to({
-        scaleX: 1,
-        scaleY: 1
-    }, 10, createjs.Ease.cubicInOut).call(_ => {
+        scaleX: 5,
+        scaleY: 5
+    }, 1050, createjs.Ease.cubicInOut).call(_ => {
         stage.removeChild(count);
         started = true;
     });
@@ -63,7 +60,7 @@ const gameEnd = stage => {
 const gameLoop = stage => {
     if(started){
         if(nowType===types.hard){
-            const input2p = obj.predict.test(players,bullets,obj.key,50,stage,2);
+            const input2p = obj.predict.test(players,bullets,obj.key,100,stage,2);
             if(input2p && obj.key[1]==0) obj.key[1] = 1 ;
             else if(!input2p && obj.key[1]==2) obj.key[1] = 0;
         }

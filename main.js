@@ -5,7 +5,7 @@ const images={};
 const Manager = new SceneManager();
 obj.key = [0,0,0];
 
-createjs.Ticker.setFPS(60);
+createjs.Ticker.setFPS(30);
 
 const keyHandle = event => {
     //状態、1:押したけど、まだtick回してない、2:押してtick回した、0:押してない
